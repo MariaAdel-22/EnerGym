@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Energym - Iniciar Sesión</title>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/iniciodesesion.css">
+</head>
+</head>
+
+<body>
+    <script>
+        var contador = 0;
+        function comprobacion() {
+            var nombre = document.getElementsByClassName("nombre")[0];
+            var elemento = document.getElementById("content");
+            var elementobien = document.getElementsByClassName("random")[0];
+            if (nombre.value == "Jose" || nombre.value == "Naza" || nombre.value == "María") {
+                elemento.className = "bien";
+                elementobien.className = "contenidobien";
+                window.setTimeout("letras(document.getElementsByClassName('nombre')[0])", 1800);
+                window.setTimeout("window.open('login2.html', '_self')", 4000);
+            } else {
+                elemento.className = "error";
+                window.setTimeout("restablecer()", 1500);
+            }
+        }
+        function restablecer() {
+            var elemento = document.getElementById("content");
+            elemento.className = "content";
+        }
+        function letras(nombre) {
+            var elementobienvenida = document.getElementById("bienvenida");
+            if (nombre.value == "Jose") {
+                elementobienvenida.innerHTML = "¡Bienvenido @" + nombre.value + "! <span>&#160;</span>";
+            } else {
+                elementobienvenida.innerHTML = "¡Bienvenida @" + nombre.value + "! <span>&#160;</span>";
+            }
+            elementobienvenida.className = "mostrado";
+        }
+    </script>
+    <div class="ancho">
+        <img src="images/J01.png" id="video">
+        <div class="content" id="content">
+            <div class="random">
+            </div>
+            <h1 class="h">¡Bienvenido!</h1>
+            <label for="inp" class="inp">
+                <input type="text" class="nombre" placeholder="&nbsp;">
+                <span class="label">Usuario</span>
+                <span class="border"></span>
+            </label>
+            <br>
+            <label for="inp" class="inp">
+                <input type="password" class="inp" placeholder="&nbsp;">
+                <span class="label">Contraseña</span>
+                <span class="border"></span>
+            </label>
+            <br>
+            <div class="boton"><a onclick="comprobacion()">Iniciar sesión</a></div>
+            <div class="separacion">
+                <div class="social">
+                    <p>- o bien, inicia sesión con -</p>
+                    <a href="URL" target="_blank"><img alt="Inicia sesión con Facebook"
+                            src="https://2.bp.blogspot.com/-28mh2hZK3HE/XCrIxxSCW0I/AAAAAAAAH_M/XniFGT5c2lsaVNgf7UTbPufVmIkBPnWQQCLcBGAs/s1600/facebook.png"
+                            title="Sígueme en Facebook" /></a>
+                    <a href="URL" target="_blank"><img alt="INicia sesión con Twitter"
+                            src="https://3.bp.blogspot.com/-E4jytrbmLbY/XCrI2Xd_hUI/AAAAAAAAIAo/qXt-bJg1UpMZmTjCJymxWEOGXWEQ2mv3ACLcBGAs/s1600/twitter.png"
+                            title="Sígueme en Facebook" /></a>
+                    <a href="URL" target="_blank"><img alt="Inicia sesión con Snapchat"
+                            src="https://2.bp.blogspot.com/-2-EPZRNFYCk/XCrI1fhDOGI/AAAAAAAAIAU/lR5bzE9ACmIKZxTNEetF0-arntQW9Z-AACLcBGAs/s1600/snapchat.png"
+                            title="Sígueme en Facebook" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h2 id="bienvenida" class="bienvenida">¡Bienvenido @!</h2>
+        </div>
+</body>
+
+</html>
